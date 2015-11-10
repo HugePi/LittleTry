@@ -12,7 +12,8 @@ class BookInfoPipeline(object):
 
 	def process_item(self, item, spider):
 		author_info = str(item['urlId']) + '\n'
-		self.file.write(author_info)
+		item_str = 'urlId: ' + str(item['urlId']) + '\n' + 'title: ' + str(item('title')) + '\n\n'
+		self.file.write(item_str)
 		return item
 	def close_spider(self, spider):
 		self.file.close()
