@@ -11,7 +11,7 @@ class BookInfoPipeline(object):
 		self.file = open('.\\json_output.txt','wb')
 
 	def process_item(self, item, spider):
-		item_str = 'urlId: ' + str(item['urlId']) + '\n' + 'title: ' + str(item('title')) + '\n\n'
+		item_str = 'urlId: ' + str(item['urlId']) + '\n' + 'title: ' + str(item['title']) + '\n\n'
 		self.file.write(item_str)
 		return item
 	def close_spider(self, spider):
